@@ -26,4 +26,13 @@ let pokemonList = [
 		weight: 5.5,
 		types: ['fairy', 'normal']
 	},
-];	
+];
+
+pokemonList.forEach(function(pokemon) {
+    if (pokemon.height>=1.0) {
+        document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
+    } else {
+        document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Awe, that\'s a short Pokemon!' + '</p>')
+    }
+
+});
