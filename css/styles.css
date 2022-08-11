@@ -9,3 +9,23 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
+
+/*----- Styling of Pokedex Image -----*/
+
+.pokedex-image {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*----- Styling of Main Text -----*/
+
+.description1 {
+    text-align: center;
+}
+
+.description2 {
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
