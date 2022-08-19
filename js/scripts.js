@@ -29,17 +29,6 @@ let pokemonRepository = (function () {
   	},
   ];
 
-
-pokemonList.forEach(function(pokemon) {
-    if (pokemon.height>=1.0) {
-      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
-    } else {
-      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a short Pokemon!' + '</p>')
-    }
-  });
-
-printArrayDetails(pokemonList);
-
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -57,3 +46,11 @@ printArrayDetails(pokemonList);
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({name: 'Pikachu'});
 console.log(pokemonRepository.getAll());
+
+pokemonList.getAll().forEach(function(pokemon) {
+    if (pokemon.height>=1.0) {
+      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
+    } else {
+      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a short Pokemon!' + '</p>')
+    }
+  });
