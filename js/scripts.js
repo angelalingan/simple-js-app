@@ -37,15 +37,15 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  return {
-    add: add,
-    getAll: getAll
+  return { //returns an object with two keys: add and getAll, which will allow anything outside the IIFE to interact with the pokemonList variable within it
+    add: add, //a key value pair that references function add(pokemon) as its value
+    getAll: getAll //a key value pair that references function getAll() as its value
   };
-})();
+})(); //the parenthesis calls the function/self-executing, so pokemonRepository becomes equal to the return value of this function shown above
 
-console.log(pokemonRepository.getAll());
+console.log(pokemonRepository.getAll()); 
 pokemonRepository.add({name: 'Pikachu'});
-console.log(pokemonRepository.getAll());
+console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
 pokemonList.getAll().forEach(function(pokemon) {
     if (pokemon.height>=1.0) {
