@@ -29,14 +29,12 @@ let pokemonList = [
 ];
 
 
-function printArrayDetails(pokemonlist) {
-for (let i=0; i < pokemonList.length; i++){
-    if (pokemonList.height>=1.0) {
-      document.write('<p>' + pokemonList[i].name + ', height: ' + pokemonList[i].height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
+pokemonList.forEach(function(pokemon) {
+    if (pokemon.height>=1.0) {
+      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
     } else {
-      document.write('<p>' + pokemonList[i].name + ', height: ' + pokemonList[i].height + ' - Wow, that\'s a short Pokemon!' + '</p>')
+      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a short Pokemon!' + '</p>')
     }
-  };
-}
+  });
 
 printArrayDetails(pokemonList);
