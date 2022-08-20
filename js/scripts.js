@@ -44,7 +44,11 @@ let pokemonRepository = (function () {
 })(); //the parenthesis calls the function/self-executing, so pokemonRepository becomes equal to the return value of this function shown above
 
 console.log(pokemonRepository.getAll()); 
-pokemonRepository.add({name: 'Pikachu'});
+pokemonRepository.add({
+  name: 'Pikachu',
+  height: 0.4,
+  weight:6
+});
 console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
 pokemonRepository.getAll().forEach(function(pokemon) {
