@@ -47,7 +47,8 @@ console.log(pokemonRepository.getAll());
 pokemonRepository.add({
   name: 'Pikachu',
   height: 0.4,
-  weight:6
+  weight:6,
+  types: ['electric']
 });
 console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
