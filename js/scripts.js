@@ -1,61 +1,85 @@
 let pokemonRepository = (function () {
-  let pokemonList = [
-  	{	
-  		name: 'Bulbasaur',
-  		height: 0.7,
-  		weight: 6.9,
-  		types: ['grass', 'poison']
-  	},
+  let repository = [
+    { 
+      name: 'Bulbasaur',
+      height: 0.7,
+      weight: 6.9,
+      types: ['grass', 'poison']
+    },
 
-  	{
-  		name: 'Butterfree',
-  		height: 1.1,
-  		weight: 32,
-  		types: ['bug', 'flying']
-  	},
+    {
+      name: 'Butterfree',
+      height: 1.1,
+      weight: 32,
+      types: ['bug', 'flying']
+    },
 
-  	{
-  		name: 'Pidgeotto',
-  		height: 1.1,
-  		weight: 30,
-  		types: ['flying', 'normal']
-  	},
+    {
+      name: 'Pidgeotto',
+      height: 1.1,
+      weight: 30,
+      types: ['flying', 'normal']
+    },
 
-  	{
-  		name: 'Jigglypuff',
-  		height: 0.5,
-  		weight: 5.5,
-  		types: ['fairy', 'normal']
-  	},
-  ];
+    {
+      name: 'Jigglypuff',
+      height: 0.5,
+      weight: 5.5,
+      types: ['fairy', 'normal']
+    },
+  ]; 
+
 
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
   }
 
   function getAll() {
-    return pokemonList;
+    return repository;
   }
 
-  return { //returns an object with two keys: add and getAll, which will allow anything outside the IIFE to interact with the pokemonList variable within it
-    add: add, //a key value pair that references function add(pokemon) as its value
-    getAll: getAll //a key value pair that references function getAll() as its value
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listpokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    button.addEventListener('click', function(event){
+      showDetails(pokemon)
+    })
   };
-})(); //the parenthesis calls the function/self-executing, so pokemonRepository becomes equal to the return value of this function shown above
 
-console.log(pokemonRepository.getAll()); 
-pokemonRepository.add({
-  name: 'Pikachu',
-  height: 0.4,
-  weight:6,
-  types: ['electric']
-});
-console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
+  function showDetails(pokemon) {
+    console.log(pokemon.name);
+  };
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-    if (pokemon.height>=1.0) {
-      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
-    } else {
-      document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a short Pokemon!' + '</p>')
-    }
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem
+  };
+})();
+
+pokemonRepository.add({ name: 'Pikachu', height: 0.3, weight: 6, types: ['electric'] });
+
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+  //if (pokemon.height>=1.0) {
+  //   document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
+  //  } else {
+  //    document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a short Pokemon!' + '</p>')
+  //  }
 });
