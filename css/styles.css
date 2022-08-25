@@ -18,17 +18,6 @@ body {
     margin-bottom: 50px;
 }
 
-/*----- Styling of Main Text -----*/
-
-.description1 {
-    text-align: center;
-}
-
-.description2 {
-    margin: 0 auto;
-    margin-bottom: 50px;
-}
-
 /*-----Styling of Button-----*/
 .button-class {
   background-color: #003a70; 
@@ -46,4 +35,12 @@ body {
   background-color: #003a70;
   color: white;
   border: 2px solid #ffcc00;
+}
+
+/*-----Styling of Pokemon List-----*/
+.pokemon-list {
+    width:90%;
+    max-width: 450px;
+    margin: 0;
+    padding: 0;
 }
