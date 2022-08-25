@@ -34,7 +34,7 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
   function loadList() { //Add a LoadList() function as a return key that uses fetch to GET the complete list of Pokémon from here: https://pokeapi.co/api/v2/pokemon/
     return fetch(apiUrl).then(function (response) {
-      return response.json();
+      return response.json(); //this returns a promise
     }).then(function (json) {
       json.results.forEach(function (item) {
         let pokemon = {
@@ -93,7 +93,7 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
   //  }
 //});
 
-pokemonRepository.loadList().then(function () {
+pokemonRepository.loadList().then(function () { //loads the data
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
