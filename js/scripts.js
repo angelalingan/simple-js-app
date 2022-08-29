@@ -98,8 +98,6 @@ let pokemonRepository = (function () {
     modalContainer.classList.remove('is-visible');
   }
 
-
-
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
@@ -112,7 +110,6 @@ let pokemonRepository = (function () {
       hideModal();
     }
   });
-
 
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () { //call the loadDetails(), Pass as parameter the Pokémon object.
@@ -130,17 +127,6 @@ let pokemonRepository = (function () {
     showDetails: showDetails
   };
 })();
-
-//console.log(pokemonRepository.getAll());
-
-//pokemonRepository.getAll().forEach(function (pokemon) {
-  //pokemonRepository.addListItem(pokemon);
-  //if (pokemon.height>=1.0) {
-  //   document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a tall Pokemon!' + '</p>')
-  //  } else {
-  //    document.write('<p>' + pokemon.name + ', height: ' + pokemon.height + ' - Wow, that\'s a short Pokemon!' + '</p>')
-  //  }
-//});
 
 pokemonRepository.loadList().then(function () { //loads the data
   pokemonRepository.getAll().forEach(function (pokemon) {
