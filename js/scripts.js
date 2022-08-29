@@ -23,7 +23,7 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
-    button.innerText = pokemon.name;
+    button.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon
     button.classList.add('button-class');
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
@@ -74,7 +74,9 @@ let pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h1');
-    titleElement.innerText = pokemon.name;
+    titleElement.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon in the modal, 
+    /*toUpperCase() method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one).*/
+    /*slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. */
 
     let contentElement = document.createElement('p');
     contentElement.innerText = `Height: ${pokemon.height}`;
