@@ -35,9 +35,13 @@ body {
   transition-duration: 0.4s;
   cursor: pointer;
   background-color: #fff; /*white*/
-  color: black;
-  
+  color: black; 
 }
+
+.button-class:hover {
+      background-color:#B2BDB4;
+      transition: 0.7s;
+  }
 
 /*-----Styling of Pokemon List-----*/
 .pokemon-list {
