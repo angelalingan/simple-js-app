@@ -30,6 +30,10 @@ let pokemonRepository = (function () {
     button.addEventListener('click', function(event){
       showDetails(pokemon);
     })
+    pokemonList.classList.add(
+      'group-list-item',
+      'justify-content-center',
+    );
   };
 
   function loadList() { //Add a LoadList() function as a return key that uses fetch to GET the complete list of Pokémon from here: https://pokeapi.co/api/v2/pokemon/
