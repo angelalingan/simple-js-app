@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let repository = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   let modalContainer = document.querySelector('#modal-container'); 
 
   function add(pokemon) {
@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
     modalContainer.innerHTML = '';
 
     let modal = document.createElement('div');
-    modal.classList.add('modal');
+    modal.classList.add('pokemon-modal');
 
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
