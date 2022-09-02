@@ -108,7 +108,7 @@ body {
 
 .pokemon-modal img {
   height: 100;
-  width: auto;
+  width: 200px;
 }
 
 #modal-container {
