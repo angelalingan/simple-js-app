@@ -60,6 +60,7 @@ let pokemonRepository = (function () {
     }).then(function (details) { // add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
+      item.weight = details.weight;
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
@@ -83,7 +84,7 @@ let pokemonRepository = (function () {
     /*slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. */
 
     let contentElement = document.createElement('p');
-    contentElement.innerText = `Height: ${pokemon.height}`;
+    contentElement.innerText = `Height: ${pokemon.height}` + `m` + ' ' + `Weight: ${pokemon.weight}` + `kg`;
 
     let imgElement = document.createElement('img');
     imgElement.classList.add('img-element');
