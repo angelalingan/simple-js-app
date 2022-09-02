@@ -10,14 +10,6 @@ body {
   line-height: 1.6;
 }
 
-/*----- Styling of Pokedex Image -----*/
-
-.pokedex-image {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
 /*-----Styling of Button-----*/
 .button-class {
   background-color: #003a70; 
