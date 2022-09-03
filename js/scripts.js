@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
   let repository = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-container'); 
+  let modalContainer = document.querySelector('#pokemonModalBody'); 
 
   function add(pokemon) {
     if (
@@ -24,8 +24,12 @@ let pokemonRepository = (function () {
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon
-    button.classList.add('button-class');
+    button.classList.add('btn', 'btn-primary', 'button-class');
     listpokemon.appendChild(button);
+    button.setAttribute('data-target', '#pokemonModal');
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-is-clicked', 'false');
+    document.querySelector('.pokemon-list').appendChild(listpokemon);
     pokemonList.appendChild(listpokemon);
     button.addEventListener('click', function(event){
       showDetails(pokemon);
@@ -75,7 +79,6 @@ let pokemonRepository = (function () {
 
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h1');
@@ -118,6 +121,8 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () { //call the loadDetails(), Pass as parameter the Pokémon object.
+      const title = document.getElementById('pokemonModalLabel');
+        title.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);  
       showModal(pokemon);
       console.log(pokemon);
     });
