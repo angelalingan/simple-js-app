@@ -32,9 +32,14 @@ body {
 }
 
 .button-class:hover {
-      background-color:#B2BDB4;
+      background-color:#3D88BA;
       transition: 0.7s;
   }
+
+.btn-secondary {
+    background-color: #3D88BA;
+    transition: 0.7s;
+}
 
 /*-----Styling of Pokemon List-----*/
 .pokemon-list {
