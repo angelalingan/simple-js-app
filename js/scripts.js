@@ -82,10 +82,8 @@ let pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h1');
-    titleElement.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon in the modal, 
-    /*toUpperCase() method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one).*/
-    /*slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. */
-
+    //titleElement.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon in the modal
+    
     let contentElement = document.createElement('p');
     contentElement.innerText = `Height: ${pokemon.height}` + `m` + ' ' + `Weight: ${pokemon.weight}` + `kg` + ' ' + `Type: ${pokemon.types[0].type.name.toUpperCase()}`
 
@@ -98,7 +96,6 @@ let pokemonRepository = (function () {
     modal.appendChild(imgElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
-
     modalContainer.classList.add('is-visible');
   }
 
