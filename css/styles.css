@@ -10,6 +10,10 @@ body {
   line-height: 1.6;
 }
 
+/*-----Styling of Navbar-----*/
+.navbar-brand {
+    font-family: "Silkscreen";
+}
 /*-----Styling of Button-----*/
 .button-class {
   background-color: #003a70; 
