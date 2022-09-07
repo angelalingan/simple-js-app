@@ -85,7 +85,7 @@ let pokemonRepository = (function () {
     //titleElement.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon in the modal
     
     let contentElement = document.createElement('p');
-    contentElement.innerText = `Height: ${pokemon.height}` + `m` + ' ' + `Weight: ${pokemon.weight}` + `kg` + ' ' + `Type: ${pokemon.types[0].type.name.toUpperCase()}`
+    let types = pokemon.types.map((item) => item.type.name).join(", "); contentElement.innerText = `Height: ${pokemon.height}` + `m` + ' ' + `Weight: ${pokemon.weight}` + `kg` + ' ' + `Type: ${types.toUpperCase()}`
 
     let imgElement = document.createElement('img');
     imgElement.classList.add('img-element');
