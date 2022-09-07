@@ -103,19 +103,6 @@ let pokemonRepository = (function () {
     modalContainer.classList.remove('is-visible');
   }
 
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();
-    }
-  });
-
-  modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
-
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () { //call the loadDetails(), Pass as parameter the Pokémon object.
       const title = document.getElementById('pokemonModalLabel');
