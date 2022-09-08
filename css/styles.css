@@ -112,15 +112,6 @@ body {
   width: 200px;
 }
 
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: block;
-  margin-top: 43px;
-}
-
 /*-----Styling of Page Container-----*/
 .page-container {
     margin-top: 60px;
