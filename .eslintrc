@@ -6,6 +6,7 @@
   "extends": [
     "eslint:recommended"
   ],
+  "parser": "linter-eslint"
   "rules": {
     "quotes": ["error", "single"]
   }
