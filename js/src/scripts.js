@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
   let repository = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#pokemonModalBody'); 
+  let modalContainer = document.querySelector('#pokemonModalBody');
 
   function add(pokemon) {
     if (
@@ -83,9 +83,9 @@ let pokemonRepository = (function () {
 
     let titleElement = document.createElement('h1');
     //titleElement.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1); //capitalizes the first letter of Pokemon in the modal
-    
+
     let contentElement = document.createElement('p');
-    let types = pokemon.types.map((item) => item.type.name).join(", "); 
+    let types = pokemon.types.map((item) => item.type.name).join(", ");
       contentElement.innerText = `Height: ${pokemon.height}` + `m` + ' ' + `Weight: ${pokemon.weight}` + `kg` + ' ' + `Type: ${types.toUpperCase()}`
 
     let imgElement = document.createElement('img');
@@ -107,7 +107,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () { //call the loadDetails(), Pass as parameter the Pokémon object.
       const title = document.getElementById('pokemonModalLabel');
-        title.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);  
+        title.innerText = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
       showModal(pokemon);
       console.log(pokemon);
     });
